@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+        <head>
+            <meta charset="utf-8">
+            <title>File I/O Test</title>
+            <script
+                src="https://code.jquery.com/jquery-1.12.4.min.js"
+                integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
+                crossorigin="anonymous">
+            </script>
+        </head>
+    <body>
+
+        <form action="/api/contents" method="post" enctype="multipart/form-data">
+            <textarea id="contents" name="contents"></textarea>
+            <input type="file" name="text"/>
+            <input type="submit" value="저장"/>
+        </form>
+            <script>
+                $.ajax({
+                    url: '/api/contents',
+                    method: 'get',
+                    success: (data) => {
+                        $("#contents").val(data);
+                    }
+                })
+            </script>
+
+    </body>
+</html>
